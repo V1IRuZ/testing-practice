@@ -22,5 +22,9 @@ describe("Capitalize function", () => {
 
   test("works when a space is the first character in the string", () => {
     expect(capitalize(" empty")).toBe(" empty");
-  })
+  });
+
+  test("accepts strings that already start with an uppercase letter", () => {
+    expect(capitalize("Hello!")).toBe("Hello!");
+  });
 });

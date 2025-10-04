@@ -1,5 +1,8 @@
 export const calculator = {
   add(a, b) {
+    if (typeof a !== "number" || typeof b !== "number") {
+      throw new Error("Only numbers are accepted");
+    }
     return a + b;
   },
   subtract(a, b) {
@@ -10,5 +13,5 @@ export const calculator = {
   },
   multiply(a, b) {
     return a * b;
-  }
+  },
 };

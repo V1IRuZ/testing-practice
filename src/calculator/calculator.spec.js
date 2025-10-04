@@ -6,8 +6,9 @@ describe("Calculator", () => {
       expect(calculator.add(2, 3)).toBe(5);
     });
 
-    test("adds anothe two number", () => {
+    test("adds another two number", () => {
       expect(calculator.add(323, 241)).toBe(564);
     });
+
   });
 });

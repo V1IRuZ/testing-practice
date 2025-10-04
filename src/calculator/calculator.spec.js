@@ -22,5 +22,14 @@ describe("Calculator", () => {
         );
       },
     );
+
+    test.each(["abc", [2, 3], null, undefined, true])(
+      "second number accepts only numbers (%p)",
+      (input) => {
+        expect(() => calculator.add(3, input)).toThrow(
+          "Only numbers are accepted",
+        );
+      },
+    );
   });
 });

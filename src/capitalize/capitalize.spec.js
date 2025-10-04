@@ -19,4 +19,8 @@ describe("Capitalize function", () => {
       expect(() => capitalize(input)).toThrow("Only strings are accepted");
     },
   );
+
+  test("works when a space is the first character in the string", () => {
+    expect(capitalize(" empty")).toBe(" empty");
+  })
 });

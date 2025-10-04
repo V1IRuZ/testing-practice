@@ -15,7 +15,7 @@ describe("Calculator", () => {
     });
 
     test.each(["abc", [2, 3], null, undefined, true])(
-      "accepts only numbers (%p)",
+      "first invalid input throws error (%p)",
       (input) => {
         expect(() => calculator.add(input, 4)).toThrow(
           "Only numbers are accepted",
@@ -24,7 +24,7 @@ describe("Calculator", () => {
     );
 
     test.each(["abc", [2, 3], null, undefined, true])(
-      "second number accepts only numbers (%p)",
+      "second invalid input throws error (%p)",
       (input) => {
         expect(() => calculator.add(3, input)).toThrow(
           "Only numbers are accepted",

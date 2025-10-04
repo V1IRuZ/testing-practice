@@ -19,4 +19,10 @@ describe("reverseString function", () => {
   test("accepts empty strings", () => {
     expect(reverseString("")).toBe("");
   });
+
+  test("accepts long strings", () => {
+    expect(reverseString("this string is a sentence")).toBe(
+      "ecnetnes a si gnirts siht",
+    );
+  });
 });

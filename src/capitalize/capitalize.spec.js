@@ -13,11 +13,10 @@ describe("Capitalize function", () => {
     expect(capitalize("")).toBe("");
   });
 
-  test("accepts only strings", () => {
-    expect(() => capitalize(5)).toThrow("Only strings are accepted");
-  });
-
-  test("accepts still only strings", () => {
-    expect(() => capitalize(["a", "b", "c"])).toThrow("Only strings are accepted");
-  });
+  test.each([5, ["a", "b", "c"], { a: "hello" }, null, undefined, false])(
+    "throws error if input is not a string (%p)",
+    (input) => {
+      expect(() => capitalize(input)).toThrow("Only strings are accepted");
+    },
+  );
 });

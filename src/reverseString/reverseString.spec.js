@@ -25,4 +25,8 @@ describe("reverseString function", () => {
       "ecnetnes a si gnirts siht",
     );
   });
+
+  test("works strings with numbers", () => {
+    expect(reverseString("h3ll0")).toBe("0ll3h");
+  });
 });

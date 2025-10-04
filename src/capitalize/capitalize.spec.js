@@ -27,4 +27,8 @@ describe("Capitalize function", () => {
   test("accepts strings that already start with an uppercase letter", () => {
     expect(capitalize("Hello!")).toBe("Hello!");
   });
+
+  test("accepts string with one chracter", () => {
+    expect(capitalize("e")).toBe("E");
+  });
 });

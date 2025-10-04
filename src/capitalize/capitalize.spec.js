@@ -31,4 +31,8 @@ describe("Capitalize function", () => {
   test("accepts string with one chracter", () => {
     expect(capitalize("e")).toBe("E");
   });
+
+  test("accepts strings starting with number", () => {
+    expect(capitalize("8mile")).toBe("8mile");
+  });
 });

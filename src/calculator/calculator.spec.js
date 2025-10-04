@@ -13,5 +13,14 @@ describe("Calculator", () => {
     test("adds floating numbers", () => {
       expect(calculator.add(0.5, 0.3)).toBeCloseTo(0.8);
     });
+
+    test.each(["abc", [2, 3], null, undefined, true])(
+      "accepts only numbers (%p)",
+      (input) => {
+        expect(() => calculator.add(input, 4)).toThow(
+          "Only numbers are accepted",
+        );
+      },
+    );
   });
 });

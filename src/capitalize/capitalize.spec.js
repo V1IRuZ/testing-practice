@@ -12,4 +12,12 @@ describe("Capitalize function", () => {
   test("accepts empty strings", () => {
     expect(capitalize("")).toBe("");
   });
+
+  test("accepts only strings", () => {
+    expect(() => capitalize(5)).toThrow("Only strings are accepted");
+  });
+
+  test("accepts still only strings", () => {
+    expect(() => capitalize(["a", "b", "c"])).toThrow("Only strings are accepted");
+  });
 });

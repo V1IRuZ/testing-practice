@@ -8,4 +8,11 @@ describe("reverseString function", () => {
   test("accepts different strings", () => {
     expect(reverseString("Greetings")).toBe("sgniteerG");
   });
+
+  test.each([3, ["a", "b", "c"], { name: "John" }, null, undefined])(
+    "accepts only strings (%p)",
+    (input) => {
+      expect(() => reverseString(input)).toThrow("Only strings are accepted");
+    },
+  );
 });

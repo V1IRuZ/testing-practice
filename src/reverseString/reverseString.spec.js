@@ -15,4 +15,8 @@ describe("reverseString function", () => {
       expect(() => reverseString(input)).toThrow("Only strings are accepted");
     },
   );
+
+  test("accepts empty strings", () => {
+    expect(reverseString("")).toBe("");
+  });
 });

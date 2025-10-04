@@ -17,7 +17,7 @@ describe("Calculator", () => {
     test.each(["abc", [2, 3], null, undefined, true])(
       "accepts only numbers (%p)",
       (input) => {
-        expect(() => calculator.add(input, 4)).toThow(
+        expect(() => calculator.add(input, 4)).toThrow(
           "Only numbers are accepted",
         );
       },

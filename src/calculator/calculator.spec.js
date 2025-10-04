@@ -35,5 +35,9 @@ describe("Calculator", () => {
     test("accepts negative numbers", () => {
       expect(calculator.add(-2, -5)).toBe(-7);
     });
+
+    test("accepts infinity", () => {
+      expect(calculator.add(Infinity, 4)).toBe(Infinity);
+    });
   });
 });

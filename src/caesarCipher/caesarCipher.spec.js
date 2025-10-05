@@ -12,4 +12,8 @@ describe("caesarCipher function", () => {
   test("works with wrap around", () => {
     expect(caesarCipher("xyz", 3)).toBe("abc");
   });
+
+  test("accepts characters other than just the alphabets", () => {
+    expect(caesarCipher("oh, hello there!", 3)).toBe("rk, khoor wkhuh!");
+  });
 });

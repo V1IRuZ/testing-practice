@@ -128,4 +128,48 @@ describe("Calculator", () => {
       },
     );
   });
+
+  describe("multiply method", () => {
+    test("multiplys two numbers", () => {
+      expect(calculator.multiply(3, 5)).toBe(15);
+    });
+
+    test("works with floating numbers", () => {
+      expect(calculator.multiply(3.2, 2.2)).toBeCloseTo(7.04);
+    });
+
+    test("works with negative numbers", () => {
+      expect(calculator.multiply(-7, -3)).toBe(21);
+    });
+
+    test("works with infinity", () => {
+      expect(calculator.multiply(Infinity, 123)).toBe(Infinity);
+    });
+
+    test("works with zeroes", () => {
+      expect(calculator.multiply(0, 5)).toBe(0);
+    });
+
+    test("works with big numbers", () => {
+      expect(calculator.multiply(999999999999e+222, 999999999999e+232)).toBe(Infinity);
+    });
+
+    test.each(["46", [7, 13], undefined])(
+      "first invalid input throws error (%p)",
+      (input) => {
+        expect(() => calculator.multiply(input, 12)).toThrow(
+          "Only numbers are accepted",
+        );
+      },
+    );
+
+    test.each([NaN, { num: 99 }, null])(
+      "second invalid input throws error (%p)",
+      (input) => {
+        expect(() => calculator.multiply(42, input)).toThrow(
+          "Only numbers are accepted",
+        );
+      },
+    );
+  });
 });

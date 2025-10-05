@@ -1,5 +1,5 @@
 export const calculator = {
-  add(a, b) {
+  _validateInput(a, b) {
     if (
       typeof a !== "number" ||
       typeof b !== "number" ||
@@ -8,23 +8,25 @@ export const calculator = {
     ) {
       throw new Error("Only numbers are accepted");
     }
+  },
+
+  add(a, b) {
+    this._validateInput(a, b);
     return a + b;
   },
+
   subtract(a, b) {
-    if (
-      typeof a !== "number" ||
-      typeof b !== "number" ||
-      Number.isNaN(a) ||
-      Number.isNaN(b)
-    ) {
-      throw new Error("Only numbers are accepted");
-    }
+    this._validateInput(a, b);
     return a - b;
   },
+
   divide(a, b) {
+    this._validateInput(a, b);
     return a / b;
   },
+
   multiply(a, b) {
+    this._validateInput(a, b);
     return a * b;
   },
 };

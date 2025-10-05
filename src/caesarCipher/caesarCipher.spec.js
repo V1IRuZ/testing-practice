@@ -8,4 +8,8 @@ describe("caesarCipher function", () => {
   test("works with various of words", () => {
     expect(caesarCipher("secret", 3)).toBe("vhfuhw");
   });
+
+  test("works with wrap around", () => {
+    expect(caesarCipher("xyz", 3)).toBe("abc");
+  });
 });

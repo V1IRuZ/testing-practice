@@ -21,6 +21,9 @@ export const calculator = {
   },
 
   divide(a, b) {
+    if (a === 0 && b === 0) {
+      throw new Error("You cannot divide zero by zero");
+    }
     this._validateInput(a, b);
     return a / b;
   },

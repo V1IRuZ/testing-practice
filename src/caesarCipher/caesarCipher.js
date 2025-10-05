@@ -3,9 +3,10 @@ export function caesarCipher(string, key) {
   const message = string.split("");
 
   const cipheredString = message.map((char) => {
-    let index = alphabets.indexOf(char) + key;
+    let index = alphabets.indexOf(char);
+    if(index === -1) return char;
 
-    const newIndex = (alphabets.length + index) % alphabets.length
+    const newIndex = (key + index) % alphabets.length
 
     return alphabets[newIndex];
   });

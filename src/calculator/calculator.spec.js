@@ -86,4 +86,46 @@ describe("Calculator", () => {
       expect(calculator.subtract(0, 0)).toBe(0);
     });
   });
+
+  describe("divide method", () => {
+    test("divides two numbers", () => {
+      expect(calculator.divide(10, 2)).toBe(5);
+    });
+
+    test("works with floating numbers", () => {
+      expect(calculator.divide(7.5, 0.4)).toBeCloseTo(18.75);
+    });
+
+    test("works with negative numbers", () => {
+      expect(calculator.divide(-8, -2)).toBe(4);
+    });
+
+    test("throws an error when dividing zero with zero", () => {
+      expect(() => calculator.divide(0, 0)).toThrow(
+        "You cannot divide zero by zero",
+      );
+    });
+
+    test("works with infinity", () => {
+      expect(calculator.divide(Infinity, 2)).toBe(Infinity);
+    });
+
+    test.each(["3", [2, 3], false])(
+      "first invalid input throws error (%p)",
+      (input) => {
+        expect(() => calculator.divide(input, 6)).toThrow(
+          "Only numbers are accepted",
+        );
+      },
+    );
+
+    test.each([NaN, { num: 2 }, null])(
+      "second invalid input throws error (%p)",
+      (input) => {
+        expect(() => calculator.divide(2, input)).toThrow(
+          "Only numbers are accepted",
+        );
+      },
+    );
+  });
 });

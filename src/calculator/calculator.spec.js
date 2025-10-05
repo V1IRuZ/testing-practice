@@ -63,5 +63,14 @@ describe("Calculator", () => {
     test("works with infinity", () => {
       expect(calculator.subtract(Infinity, 52)).toBe(Infinity);
     });
+
+    test.each(["3", [2, 3], false])(
+      "first invalid input throws error (%p)",
+      (input) => {
+        expect(() => calculator.subtract(input, 6)).toThrow(
+          "Only numbers are accepted",
+        );
+      },
+    );
   });
 });

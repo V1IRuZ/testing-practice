@@ -59,5 +59,9 @@ describe("Calculator", () => {
     test("works with negative numbers", () => {
       expect(calculator.subtract(-3, -7)).toBe(4);
     });
+
+    test("works with infinity", () => {
+      expect(calculator.subtract(Infinity, 52)).toBe(Infinity);
+    });
   });
 });

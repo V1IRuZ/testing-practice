@@ -39,5 +39,9 @@ describe("Calculator", () => {
     test("accepts infinity", () => {
       expect(calculator.add(Infinity, 4)).toBe(Infinity);
     });
+
+    test("throws error on NaN", () => {
+      expect(() => calculator.add(NaN, NaN)).toThrow("Only numbers are accepted");
+    });
   });
 });

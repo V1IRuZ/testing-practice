@@ -76,7 +76,7 @@ describe("Calculator", () => {
     test.each([NaN, { num: 2 }, null])(
       "second invalid input throws error (%p)",
       (input) => {
-        expect(() => calculator.subtract(input, 6)).toThrow(
+        expect(() => calculator.subtract(2, input)).toThrow(
           "Only numbers are accepted",
         );
       },

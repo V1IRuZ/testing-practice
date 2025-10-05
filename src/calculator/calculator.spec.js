@@ -51,5 +51,10 @@ describe("Calculator", () => {
     test("substracts two numbers", () => {
       expect(calculator.subtract(9, 5)).toBe(4);
     });
+
+    test("works with floating numbers", () => {
+      expect(calculator.subtract(0.3, 0.2)).toBeCloseTo(0.1);
+    });
+
   });
 });

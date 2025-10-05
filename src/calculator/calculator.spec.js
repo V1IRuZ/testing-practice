@@ -41,7 +41,15 @@ describe("Calculator", () => {
     });
 
     test("throws error on NaN", () => {
-      expect(() => calculator.add(NaN, NaN)).toThrow("Only numbers are accepted");
+      expect(() => calculator.add(NaN, NaN)).toThrow(
+        "Only numbers are accepted",
+      );
+    });
+  });
+
+  describe("subtract method", () => {
+    test("substracts two numbers", () => {
+      expect(calculator.subtract(9, 5)).toBe(4);
     });
   });
 });

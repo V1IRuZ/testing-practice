@@ -56,5 +56,8 @@ describe("Calculator", () => {
       expect(calculator.subtract(0.3, 0.2)).toBeCloseTo(0.1);
     });
 
+    test("works with negative numbers", () => {
+      expect(calculator.subtract(-3, -7)).toBe(4);
+    });
   });
 });

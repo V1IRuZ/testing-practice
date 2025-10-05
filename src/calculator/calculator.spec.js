@@ -81,5 +81,9 @@ describe("Calculator", () => {
         );
       },
     );
+
+    test("works with zeros", () => {
+      expect(calculator.subtract(0, 0)).toBe(0);
+    });
   });
 });

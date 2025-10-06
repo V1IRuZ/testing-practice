@@ -16,4 +16,8 @@ describe("caesarCipher function", () => {
   test("accepts characters other than just the alphabets", () => {
     expect(caesarCipher("oh, hello there!", 3)).toBe("rk, khoor wkhuh!");
   });
+
+  test("works with uppercase and lowercase letters", () => {
+    expect(caesarCipher("seRioUsLy!?", 3)).toBe("vhUlrXvOb!?");
+  });
 });

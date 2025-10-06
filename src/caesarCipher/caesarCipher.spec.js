@@ -51,4 +51,8 @@ describe("caesarCipher function", () => {
       );
     },
   );
+
+  test("accepts empty strings", () => {
+    expect(caesarCipher("", 4)).toBe("");
+  });
 });

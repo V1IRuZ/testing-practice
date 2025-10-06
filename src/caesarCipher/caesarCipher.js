@@ -1,22 +1,26 @@
-export function caesarCipher(string, key) {
+export function caesarCipher(string, shiftFactor) {
+  return string
+    .split("")
+    .map((char) => cipherCharacter(char, shiftFactor))
+    .join("");
+}
+
+function cipherCharacter(character, shiftFactor) {
   const alphabets = "abcdefghijklmnopqrstuvwxyz";
-  let upperCaseAlphabets = alphabets.toUpperCase();
-  const message = string.split("");
+  let index;
+  let newIndex;
 
-  const cipheredString = message.map((char) => {
-    let index;
+  if (!alphabets.includes(character.toLowerCase())) {
+    return character;
+  }
 
-    if (char === char.toUpperCase() && upperCaseAlphabets.includes(char)) {
-      index = alphabets.indexOf(char.toLowerCase());
-      const upperCaseIndex = (key + index) % alphabets.length;
-      return alphabets[upperCaseIndex].toUpperCase();
-    }
+  if (alphabets.includes(character)) {
+    index = alphabets.indexOf(character);
+    newIndex = (shiftFactor + index) % alphabets.length;
+    return alphabets[newIndex];
+  }
 
-    index = alphabets.indexOf(char);
-    if (index === -1) return char;
-    const lowerCaseIndex = (key + index) % alphabets.length;
-    return alphabets[lowerCaseIndex];
-  });
-
-  return cipheredString.join("");
+  index = alphabets.indexOf(character.toLowerCase());
+  newIndex = (shiftFactor + index) % alphabets.length;
+  return alphabets[newIndex].toUpperCase();
 }

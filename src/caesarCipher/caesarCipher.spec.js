@@ -20,4 +20,8 @@ describe("caesarCipher function", () => {
   test("works with uppercase and lowercase letters", () => {
     expect(caesarCipher("seRioUsLy!?", 3)).toBe("vhUlrXvOb!?");
   });
+
+  test("works with different shift factors", () => {
+    expect(caesarCipher("Message!", 5)).toBe("Rjxxflj!");
+  });
 });

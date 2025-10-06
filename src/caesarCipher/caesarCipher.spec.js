@@ -29,7 +29,7 @@ describe("caesarCipher function", () => {
     "throws an error if shift factor is out of range (%p)",
     (invalidShift) => {
       expect(() => caesarCipher("error", invalidShift)).toThrow(
-        "The shift factor must be between 1 and 25.",
+        "Shift factor must be between 1 and 25.",
       );
     },
   );
@@ -38,7 +38,7 @@ describe("caesarCipher function", () => {
     "throws an error if shift factor is not number (%p)",
     (invalidShift) => {
       expect(() => caesarCipher("error", invalidShift)).toThrow(
-        "The shift factor must be a number.",
+        "Shift factor must be a number.",
       );
     },
   );

@@ -42,4 +42,13 @@ describe("caesarCipher function", () => {
       );
     },
   );
+
+  test.each([5, null, ["hello"]])(
+    "throws an error if first input is not string (%p)",
+    (invalidString) => {
+      expect(() => caesarCipher(invalidString, 3)).toThrow(
+        "Ciphered message must be a string.",
+      );
+    },
+  );
 });

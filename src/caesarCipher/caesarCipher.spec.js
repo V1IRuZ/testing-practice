@@ -33,4 +33,13 @@ describe("caesarCipher function", () => {
       );
     },
   );
+
+  test.each(["3", null, NaN, [3]])(
+    "throws an error if shift factor is not number (%p)",
+    (invalidShift) => {
+      expect(() => caesarCipher("error", invalidShift)).toThrow(
+        "The shift factor must be a number.",
+      );
+    },
+  );
 });

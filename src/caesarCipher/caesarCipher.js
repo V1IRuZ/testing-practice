@@ -1,26 +1,20 @@
+function cipherCharacter(character, shiftFactor) {
+  const alphabets = "abcdefghijklmnopqrstuvwxyz";
+  const isUpperCase = character === character.toUpperCase();
+  const lowerCaseChar = character.toLowerCase();
+
+  if (!alphabets.includes(lowerCaseChar)) return character;
+
+  const index = alphabets.indexOf(lowerCaseChar);
+  const newIndex = (shiftFactor + index) % alphabets.length;
+  const shiftedChar = alphabets[newIndex];
+
+  return isUpperCase ? shiftedChar.toUpperCase() : shiftedChar;
+}
+
 export function caesarCipher(string, shiftFactor) {
   return string
     .split("")
     .map((char) => cipherCharacter(char, shiftFactor))
     .join("");
-}
-
-function cipherCharacter(character, shiftFactor) {
-  const alphabets = "abcdefghijklmnopqrstuvwxyz";
-  let index;
-  let newIndex;
-
-  if (!alphabets.includes(character.toLowerCase())) {
-    return character;
-  }
-
-  if (alphabets.includes(character)) {
-    index = alphabets.indexOf(character);
-    newIndex = (shiftFactor + index) % alphabets.length;
-    return alphabets[newIndex];
-  }
-
-  index = alphabets.indexOf(character.toLowerCase());
-  newIndex = (shiftFactor + index) % alphabets.length;
-  return alphabets[newIndex].toUpperCase();
 }

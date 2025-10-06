@@ -12,6 +12,12 @@ function cipherCharacter(character, shiftFactor) {
   return isUpperCase ? shiftedChar.toUpperCase() : shiftedChar;
 }
 
+function validateString(string) {
+  if (typeof string !== "string") {
+    throw new Error("Ciphered message must be a string.");
+  }
+}
+
 function validateShiftFactor(shiftFactor) {
   const minRange = 1;
   const maxRange = 25;
@@ -26,6 +32,7 @@ function validateShiftFactor(shiftFactor) {
 }
 
 export function caesarCipher(string, shiftFactor) {
+  validateString(string);
   validateShiftFactor(shiftFactor);
 
   return string

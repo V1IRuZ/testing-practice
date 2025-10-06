@@ -24,4 +24,13 @@ describe("caesarCipher function", () => {
   test("works with different shift factors", () => {
     expect(caesarCipher("Message!", 5)).toBe("Rjxxflj!");
   });
+
+  test.each([26, 0, -1, 99])(
+    "throws an error if shift factor is out of range (%p)",
+    (invalidShift) => {
+      expect(() => caesarCipher("error", invalidShift)).toThrow(
+        "The shift factor must be between 1 and 25.",
+      );
+    },
+  );
 });

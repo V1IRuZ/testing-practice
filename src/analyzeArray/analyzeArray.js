@@ -6,8 +6,14 @@ export function analyzeArray(array) {
     array[0],
   );
 
+  const max = array.reduce(
+    (highest, current) => (highest > current ? highest : current),
+    array[0],
+  );
+
   return {
     average,
     min,
+    max,
   };
 }

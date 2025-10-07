@@ -67,4 +67,8 @@ describe("analyzeArray function", () => {
   test("throws an error for empty array", () => {
     expect(() => analyzeArray([])).toThrow("Array cannot be empty");
   });
+
+   test("throws an error for invalid array elements", () => {
+    expect(() => analyzeArray([23, 21, 5, "hello", 98])).toThrow("Each element of the array must be a number");
+  });
 });

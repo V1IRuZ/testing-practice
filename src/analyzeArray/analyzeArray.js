@@ -11,9 +11,12 @@ export function analyzeArray(array) {
     array[0],
   );
 
+  const length = array.length;
+
   return {
     average,
     min,
     max,
+    length,
   };
 }

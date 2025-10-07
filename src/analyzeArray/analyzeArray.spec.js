@@ -56,4 +56,11 @@ describe("analyzeArray function", () => {
       length: 4,
     });
   });
+
+  test.each([null, 3, { num: 3 }, "array"])(
+    "throws an error for invalid input (%p)",
+    (input) => {
+      expect(() => analyzeArray(input)).toThrow("Input must be an array");
+    },
+  );
 });

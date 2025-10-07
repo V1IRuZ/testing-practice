@@ -3,6 +3,10 @@ export function analyzeArray(array) {
     throw new Error("Input must be an array");
   }
 
+  if (array.length <= 0) {
+    throw new Error("Array cannot be empty");
+  }
+
   const average = array.reduce((sum, num) => sum + num, 0) / array.length;
 
   const min = array.reduce(

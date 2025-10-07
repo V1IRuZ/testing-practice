@@ -34,4 +34,13 @@ describe("analyzeArray function", () => {
       length: 6,
     });
   });
+
+  test("works with a single-element array", () => {
+    expect(analyzeArray([987])).toEqual({
+      average: 987,
+      min: 987,
+      max: 987,
+      length: 1,
+    });
+  });
 });

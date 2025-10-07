@@ -11,5 +11,9 @@ describe("analyzeArray function", () => {
 
   test("returns the maximum value from an array", () => {
     expect(analyzeArray([34, 29, 87, 239, 41]).max).toBe(239);
-  })
+  });
+
+  test("returns the length of the array", () => {
+    expect(analyzeArray([2, 53, 12, 54, 76, 9, 21]).length).toBe(7);
+  });
 });

@@ -1,4 +1,8 @@
 export function analyzeArray(array) {
+  if (!Array.isArray(array)) {
+    throw new Error("Input must be an array");
+  }
+
   const average = array.reduce((sum, num) => sum + num, 0) / array.length;
 
   const min = array.reduce(

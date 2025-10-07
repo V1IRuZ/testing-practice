@@ -16,4 +16,22 @@ describe("analyzeArray function", () => {
   test("returns the length of the array", () => {
     expect(analyzeArray([2, 53, 12, 54, 76, 9, 21]).length).toBe(7);
   });
+
+  test("returns object with average, min, max and length properties", () => {
+    expect(analyzeArray([2, 3, 5, 6, 9])).toEqual({
+      average: 5,
+      min: 2,
+      max: 9,
+      length: 5,
+    });
+  });
+
+  test("works with various arrays", () => {
+    expect(analyzeArray([5, 11, 4, 1, 7, 8])).toEqual({
+      average: 6,
+      min: 1,
+      max: 11,
+      length: 6,
+    });
+  });
 });

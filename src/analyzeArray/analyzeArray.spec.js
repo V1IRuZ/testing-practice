@@ -8,4 +8,8 @@ describe("analyzeArray function", () => {
   test("returns the minimum value from an array", () => {
     expect(analyzeArray([5, 7, 4, 23, 2, 9]).min).toBe(2);
   });
+
+  test("returns the maximum value from an array", () => {
+    expect(analyzeArray([34, 29, 87, 239, 41]).max).toBe(239);
+  })
 });

@@ -43,4 +43,17 @@ describe("analyzeArray function", () => {
       length: 1,
     });
   });
+
+  test("works with floating point numbers", () => {
+    expect(analyzeArray([5.2, 10, 2.4, 4]).average).toBeCloseTo(5.4);
+  });
+
+  test("works with negative numbers", () => {
+    expect(analyzeArray([2, -1, 4, 3])).toEqual({
+      average: 2,
+      min: -1,
+      max: 4,
+      length: 4,
+    });
+  });
 });

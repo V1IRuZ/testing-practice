@@ -68,7 +68,18 @@ describe("analyzeArray function", () => {
     expect(() => analyzeArray([])).toThrow("Array cannot be empty");
   });
 
-   test("throws an error for invalid array elements", () => {
-    expect(() => analyzeArray([23, 21, 5, "hello", 98])).toThrow("Each element of the array must be a number");
+  test("throws an error for invalid array elements", () => {
+    expect(() => analyzeArray([23, 21, 5, "hello", 98])).toThrow(
+      "Each element of the array must be a number",
+    );
+  });
+
+  test("works with infinity", () => {
+    expect(analyzeArray([3, 6, Infinity, 23])).toEqual({
+      average: Infinity,
+      min: 3,
+      max: Infinity,
+      length: 4,
+    });
   });
 });

@@ -1,4 +1,4 @@
-export function analyzeArray(array) {
+function validateArray(array) {
   if (!Array.isArray(array)) {
     throw new Error("Input must be an array");
   }
@@ -14,7 +14,10 @@ export function analyzeArray(array) {
   if (!allNumbers) {
     throw new Error("Each element of the array must be a number");
   }
+}
 
+export function analyzeArray(array) {
+  validateArray(array);
   const average = array.reduce((sum, num) => sum + num, 0) / array.length;
 
   const min = array.reduce(

@@ -7,6 +7,14 @@ export function analyzeArray(array) {
     throw new Error("Array cannot be empty");
   }
 
+  const allNumbers = array.every(
+    (item) => typeof item === "number" && !Number.isNaN(item),
+  );
+
+  if (!allNumbers) {
+    throw new Error("Each element of the array must be a number");
+  }
+
   const average = array.reduce((sum, num) => sum + num, 0) / array.length;
 
   const min = array.reduce(
